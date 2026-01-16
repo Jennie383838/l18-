@@ -1,18 +1,19 @@
+// src/components/App.js
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import Diplomas from "./components/Diplomas";
-import Diploma from "./components/Diploma";
-import Module from "./components/Module";
-import Register from "./components/Register";
-import Confirmation from "./components/Confirmation";
+
+import Home from "./Home";
+import Diplomas from "./Diplomas";
+import Diploma from "./Diploma";
+import Module from "./Module";
+import Register from "./Register";
+import Confirmation from "./Confirmation";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home title="Welcome to RP SOI Portal" />} />
+        <Route path="/" element={<Home title="Welcome to RP SOI  Course Enrolment Portal " />} />
 
         <Route path="/diplomas" element={<Diplomas />}>
           <Route path=":diplomaId" element={<Diploma />}>
