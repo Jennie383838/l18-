@@ -12,8 +12,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Home title="Welcome to RP SOI Portal" />} />
 
         <Route path="/diplomas" element={<Diplomas />}>
           <Route path=":diplomaId" element={<Diploma />}>

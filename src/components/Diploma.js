@@ -1,28 +1,80 @@
 import { useParams, Link, Outlet } from "react-router-dom";
 
+// Discipline modules for each diploma
 const modulesData = {
-  DIT: [
-    { id: "FSD", name: "Full Stack Development" },
-    { id: "UX", name: "User Experience Design" }
+  R13: [
+    { id: "C110", name: "Programming Fundamentals I" },
+    { id: "C112", name: "Introduction to Business Process and Automation" },
+    { id: "C206", name: "Software Development Process" },
+    { id: "C207", name: "Database Systems" },
+    { id: "C210", name: "Programming Fundamentals II" },
+    { id: "C227", name: "Operating Systems and Networking" },
+    { id: "C230", name: "Data Wrangling and Automation" },
+    { id: "C235", name: "IT Security and Management" },
+    { id: "C237", name: "Software Application Development" },
+    { id: "C240", name: "AI Essentials and Innovations" },
+    { id: "C245", name: "Data Analytics with GenAI" },
+    { id: "C339", name: "Software Testing and Analytics" }
   ],
-  DISM: [
-    { id: "CEH", name: "Ethical Hacking" },
-    { id: "DF", name: "Digital Forensics" }
+
+  R55: [
+    { id: "C374", name: "Ethical Hacking" },
+    { id: "C331", name: "Digital Forensics and Malware Analysis" },
+    { id: "C335", name: "Network Security" },
+    { id: "C350", name: "Security Design and Architecture" },
+    { id: "C371", name: "Application Security" },
+    { id: "C377", name: "Threat Hunting and Incident Response" }
+  ],
+
+  R47: [
+    { id: "C110", name: "Programming Fundamentals I" },
+    { id: "C206", name: "Software Development Process" },
+    { id: "C207", name: "Database Systems" },
+    { id: "C237", name: "Software Application Development" },
+    { id: "C240", name: "AI Essentials and Innovations" }
+  ],
+
+  R12: [
+    { id: "C229", name: "Cloud Computing Essentials" },
+    { id: "C270", name: "DevOps Essentials" },
+    { id: "C320", name: "Cloud Architecting and Administration" },
+    { id: "C322", name: "Cloud Data Centre Management" },
+    { id: "C330", name: "Linux Administration and Containerisation" },
+    { id: "C381", name: "IT Service and AI Operations" }
+  ],
+
+  R18: [
+    { id: "C240", name: "AI Essentials and Innovations" },
+    { id: "C245", name: "Data Intelligence and Visualisation" },
+    { id: "C387", name: "Machine Learning for Predictive Analytics" }
   ]
+};
+
+// Mapping diploma IDs to their full names
+const diplomaNames = {
+  R13: "Diploma in Applied Artificial Intelligence & Analytics",
+  R55: "Diploma in Cybersecurity & Digital Forensics",
+  R47: "Diploma in Information Technology",
+  R12: "Diploma in Enterprise Cloud Computing & Management",
+  R18: "Diploma in Financial Technology"
 };
 
 function Diploma() {
   const { diplomaId } = useParams();
   const modules = modulesData[diplomaId] || [];
+  const diplomaName = diplomaNames[diplomaId] || "Diploma";
 
   return (
     <div>
+      <h2>{diplomaName}</h2>
       <h3>Modules</h3>
+
       {modules.map(m => (
         <p key={m.id}>
           <Link to={m.id}>{m.name}</Link>
         </p>
       ))}
+
       <Outlet />
     </div>
   );

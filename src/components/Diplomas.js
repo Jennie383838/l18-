@@ -1,8 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 
 const diplomas = [
-  { id: "DIT", name: "Diploma in Information Technology" },
-  { id: "DISM", name: "Diploma in Infocomm Security Management" }
+  { id: "R13", name: "Diploma in Applied AI & Analytics" },
+  { id: "R55", name: "Diploma in Cybersecurity & Digital Forensics" },
+  { id: "R12", name: "Diploma in Enterprise Cloud Computing & Management" },
+  { id: "R18", name: "Diploma in Financial Technology" },
+  { id: "R47", name: "Diploma in Information Technology" }
 ];
 
 function Diplomas() {
